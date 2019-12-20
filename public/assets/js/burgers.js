@@ -6,10 +6,9 @@ $(function() {
       //id = this.is newDevour=this.newdevour
       //look to burger block where there is data-id and data-newDevour for each burger
       var id = $(this).data("id");
-      var newDevour = $(this).data("newdevour");
       
       var newDevourState = {
-        devoured: newDevour
+        devoured: true
       };
   
       // Send the PUT request.
@@ -18,7 +17,6 @@ $(function() {
         data: newDevourState
       }).then(
         function() {
-          console.log("changed devour to", newDevour);
           // Reload the page to get the updated list
           location.reload();
         }
