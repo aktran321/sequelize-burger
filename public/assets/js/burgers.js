@@ -27,13 +27,12 @@ $(function() {
   
     //once the form is submitted... create an object with property name that
     //has value of what the user inputted
-    $(".create-form").on("submit", function(event) {
+    $(".add-burger").on("click", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBurger = {
-        name: $("#burg").val().trim(),
-        // devoured: $("[name=devoured]:checked").val().trim()
+        burger_name: $("#burg").val().trim(),
       };
   
       // Then, send the ajax POST request to the Route

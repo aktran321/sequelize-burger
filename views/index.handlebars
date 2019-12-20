@@ -9,7 +9,18 @@ because it won't get styled unless the link is in here too...-->
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                    {{> burgers/burger-block devour=true}}
+                {{name}}
+                {{!-- {{> burgers/burger-block devour=true}} --}}
+                   <li>
+	{{burger_name}}
+
+	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+		{{#if devour}}EAT! {{else}}Make again!{{/if}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}">THROW AWAY!</button>
+</li>
+
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -20,7 +31,12 @@ because it won't get styled unless the link is in here too...-->
         <ul>
             {{#each burgers}}
             {{#if devoured}}
-                {{> burgers/burger-block2 devour=false}}
+                {{!-- {{> burgers/burger-block2 devour=false}} --}}
+                <li>
+	{{burger_name}}
+
+</li>
+
             {{/if}}
             {{/each}}
         </ul>
@@ -35,7 +51,7 @@ because it won't get styled unless the link is in here too...-->
                 <label for="burg">Burger Name:</label>
                 <input type="text" id="burg" name="name">
             </div>
-            <button class = "form-group" type="submit">Add burger</button>
+            <button class = "form-group add-burger btn btn-secondary" type="submit">Add burger</button>
 
             </form>
         </div>
